@@ -56,3 +56,8 @@ CONTAINER ID        IMAGE                      COMMAND                  CREATED 
 ## 참고 문서
 자세한 예제와 설명은 설명서를 참조.
 
+- [모듈 추가하기](https://github.com/rester-world/rester-sql/docs/add_module.md)
+- [SQL 파일 실행하기](https://github.com/rester-world/rester-sql/docs/add_module.md)
+- [PHP 파일 실행하기](https://github.com/rester-world/rester-sql/docs/add_module.md)
+- [파라미터 설정하기](https://github.com/rester-world/rester-sql/docs/add_module.md)
+- [인증 기능 사용하기](https://github.com/rester-world/rester-sql/docs/add_module.md)
