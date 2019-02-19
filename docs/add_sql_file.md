@@ -1,13 +1,13 @@
 ## 개요
 
-rester-sql은 간단한 SQL 형식의 프로시저를 지원한다.
+rester-sql은 SQL 파일 형식의 프로시저를 지원한다.
 
-아래에서 모듈을 추가하는 과정을 설명한다.
+아래에서 프로시저를 추가하는 과정을 설명한다.
 
 ## SQL 프로시저 추가하기
 새로 만든 hello_rester에 SQL 프로시저 추가:
 ```
-vi src/modules/hello_rester-second/select_simple.php
+vi src/modules/hello_rester-second/select_simple.sql
 ```
 
 SQL 프로시저 내용 작성:

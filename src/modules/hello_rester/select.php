@@ -1,9 +1,13 @@
-<?php use rester\sql\db;
+<?php
+use rester\sql\db;
+use rester\sql\rester;
 
 if(!defined('__RESTER__')) exit;
 
-$query = " SELECT * FROM `example` LIMIT 10 ";
+$start = rester::param('start');
+$rows = rester::param('rows');
 
+$query = " SELECT * FROM `example` LIMIT {$start}, {$rows} ";
 $pdo = db::get();
 
 $list = [];
