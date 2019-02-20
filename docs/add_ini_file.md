@@ -7,7 +7,7 @@ rester-sql은 각각의 프로시저에 ini 파일을 설정하여 파라미터�
 ## 프로시저 ini 추가하기
 프로시저에 ini 파일 추가:
 ```
-vi src/modules/hello_rester-second/select.ini
+vi src/modules/basic_example/select.ini
 ```
 
 ini 파일에 내용 예제:

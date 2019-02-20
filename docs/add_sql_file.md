@@ -4,10 +4,10 @@ rester-sql은 SQL 파일 형식의 프로시저를 지원한다.
 
 아래에서 프로시저를 추가하는 과정을 설명한다.
 
-## SQL 프로시저 추가하기
-새로 만든 hello_rester에 SQL 프로시저 추가:
+## SQL 형식의 SELECT 프로시저 추가하기
+basic_example에 SQL 프로시저 추가:
 ```
-vi src/modules/hello_rester-second/select_simple.sql
+vi src/modules/basic_example/select.sql
 ```
 
 SQL 프로시저 내용 작성:
@@ -16,16 +16,13 @@ SELECT *
 FROM `example`
 LIMIT :start, :rows
 ```
-- SQL의 형식에서는 파라미터를 입력을 지원한다.
-- 파라미터는 선행기호(":")를 사용하여 사용한다.
-- 파리미터의 규칙(*.ini)을 결정할 수 있다.
 
-SQL 프로시저에 파라미터 설정 파일 추가:
+프로시저 설정 파일 추가(선택):
 ```
-vi src/modules/hello_rester-second/select_simple.ini
+vi src/modules/basic_example/select.ini
 ```
 
-SQL 규칙 파일에 내용 작성:
+프로시저 설정 파일에 내용 작성(선택):
 ```
 [:start]
 type = number
@@ -35,6 +32,63 @@ default = 0
 type = number
 default = 10
 ```
+
+## SQL 형식의 Key를 사용한 Fetch 프로시저 추가하기
+basic_example에 SQL 프로시저 추가:
+```
+vi src/modules/basic_example/fetch_by_key.sql
+```
+
+SQL 프로시저 내용 작성:
+```
+SELECT *
+FROM `example`
+WHERE `key`=:key
+LIMIT 1
+```
+
+프로시저 설정 파일 추가(선택):
+```
+vi src/modules/basic_example/fetch_by_key.ini
+```
+
+프로시저 설정 파일에 내용 작성(선택):
+```
+[:key]
+type = string
+require = true
+```
+
+## SQL 형식의 INSERT 프로시저 추가하기
+basic_example에 SQL 프로시저 추가:
+```
+vi src/modules/basic_example/direct_insert.sql
+```
+
+SQL 프로시저 내용 작성:
+```
+INSERT
+INTO `rester-sql`.`example`
+(`key`, `value`)
+VALUES (:key, :value)
+```
+
+프로시저 설정 파일 추가(선택):
+```
+vi src/modules/basic_example/direct_insert.ini
+```
+
+프로시저 설정 파일에 내용 작성(선택):
+```
+[:key]
+type = string
+default = 10
+
+[:value]
+type = number
+default = 20
+```
+
 
 ### 결과 확인
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b48da2f9eeab03ae91de)
