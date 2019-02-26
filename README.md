@@ -1,31 +1,23 @@
 ## 개요
-rester-sql을 사용법을 설명하기 위한 예제 코드를 작성한 것이다.
 
-또한, rester-sql을 작업하기 위한 템플릿으로 사용할 수 있다.
- 
-컨테이너를 생성할때 [Docker-hub](https://hub.docker.com/r/rester/rester-sql)에서 이미지를 가져와서 사용 할 수 있고, [https://github.com/rester-world/rester-docker](https://github.com/rester-world/rester-sql)의 소스를 내려받아서 빌드하여 사용할 수 있다.
+rester-sql을 소개하기 위한 데모이다.
 
-이외에, rester-sql은 1개 이상의 database가 필요하고, redis(option) 기능을 지원한다.
+자세한 내용은 아래를 참고
 
-이 sample은 mariaDB와, redis를 사용하여 구동한다.
-
-### 버전
-| Docker Tag | Git Release | Nginx Version | PHP Version | Alpine Version |
-|-----|-------|-----|--------|--------|
-| latest/1.0 | Master Branch |1.14.0 | 7.2.4 | 3.7 |
-
-### 링크
-- [https://github.com/rester-world/rester-sql](https://github.com/rester-world/rester-sql)
-- [https://hub.docker.com/r/rester/rester-sql](https://hub.docker.com/r/rester/rester-sql)
-
+- [rester-sql 바로 가기](https://github.com/rester-world/rester-sql)
+- [rester-sql wiki 바로 가기](https://github.com/rester-world/rester-sql/wiki)
 
 ## 시작하기
+아래에서 도커를 사용한 기본적인 동작 방법에 대해서 설명한다.
+
+### 이미지 받기
 docker hub 에서 이미지 받아오기:
 ```
 docker pull mariadb:latest
 docker pull redis:latest
 docker pull rester/rester-sql:latest
 ```
+
 ### 실행
 명령어로 컨테이너 생성:
 ```
@@ -51,15 +43,3 @@ CONTAINER ID        IMAGE                      COMMAND                  CREATED 
 
 ### 결과 확인
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b48da2f9eeab03ae91de)
-
-
-## 참고 문서
-자세한 예제와 설명은 설명서를 참조.
-
-- [모듈 설정 파일](https://github.com/rester-world/rester-sql-sample/blob/master/docs/add_config_file.md)
-- [프로시저 설정 파일](https://github.com/rester-world/rester-sql-sample/blob/master/docs/add_ini_file.md)
-- [모듈 추가하기](https://github.com/rester-world/rester-sql-sample/blob/master/docs/add_module.md)
-- [SQL형식의 프로시저 추가하기](https://github.com/rester-world/rester-sql-sample/blob/master/docs/add_sql_file.md)
-- [PHP형식의 프로시저 추가하기](https://github.com/rester-world/rester-sql-sample/blob/master/docs/add_php_file.md)
-- [인증 프로시저 추가하기](https://github.com/rester-world/rester-sql-sample/blob/master/docs/add_auth_file.md)
-- [프로시저 호출]()
