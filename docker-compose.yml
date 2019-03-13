@@ -16,14 +16,29 @@ services:
   image: mariadb
   restart: always
   ports:
-    - 3306:3306
+   - 3306:3306
   volumes:
-    - ./example_db.sql:/docker-entrypoint-initdb.d/dump.sql
+   - ./db.sql:/docker-entrypoint-initdb.d/dump.sql
   environment:
    MYSQL_RANDOM_ROOT_PASSWORD: "true"
    MYSQL_DATABASE: "rester-sql"
    MYSQL_USER: "rester-sql"
    MYSQL_PASSWORD: "rester-sql"
+
+ # second database
+ db2:
+  container_name: db2
+  image: mariadb
+  restart: always
+  ports:
+   - 4306:3306
+  volumes:
+   - ./db2.sql:/docker-entrypoint-initdb.d/dump.sql
+  environment:
+   MYSQL_RANDOM_ROOT_PASSWORD: "true"
+   MYSQL_DATABASE: "rester-sql2"
+   MYSQL_USER: "rester-sql2"
+   MYSQL_PASSWORD: "rester-sql2"
 
  rester-sql:
   container_name: rester-sql
